@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link
+   href="https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500;600;700&display=swap"
+   rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/css/main.css" />
+  <script defer src="/app/js/booking.js"></script>
+
+  <title>Book at Dine Restaurant</title>
+ </head>
+ <body>
+  <main>
+   <section class="booking">
+    <div class="booking__bg bg-image-set"></div>
+    <div class="booking__bg--2"></div>
+    <div class="booking__content--wrap container-max-width">
+     <a href="index.html" class="booking__logo"
+      ><img
+       src="/main-base/images/homepage/logo.svg"
+       alt="Dine restaurant logo"
+     /></a>
+     <div class="booking__text--wrap">
+      <h1 class="booking__heading heading-light">Reservations</h1>
+      <p class="booking__statement statement statement-light">
+       We can't wait to host you. If you have any special requirements please
+       feel free to call on the phone number below. We'll be happy to
+       accommodate you.
+      </p>
+     </div>
+     <a href="#" class="btn btn-transparent booking__btn">Reserve place</a>
+
+     <!-- Form -->
+     <div class="form">
+      <fieldset>
+       <div class="form__wrap">
+        <form action="#">
+         <div class="form__field form__field--text">
+          <input type="text" id="name" class="form__input" placeholder="Name" />
+          <small class="form__error--message">Error</small>
+         </div>
+         <div class="form__field form__field--text">
+          <input
+           type="email"
+           id="email"
+           class="form__input form__input--email"
+           placeholder="Email"
+          />
+          <small class="form__error--message">Error</small>
+         </div>
+
+         <div class="form__field form__field--date">
+          <div class="form__label--wrap">
+           <label for="date">Pick a date</label>
+           <small class="form__error--message">Error</small>
+          </div>
+
+          <!-- Month -->
+          <input
+           type="number"
+           name="month"
+           id="month"
+           class="form__input form__input--month"
+           min="1"
+           max="12"
+           placeholder="MM"
+          />
+          <!-- Day -->
+          <input
+           type="number"
+           name="day"
+           id="day"
+           class="form__input form__input--day"
+           placeholder="DD"
+           min="1"
+           max="31"
+          />
+          <!-- Year -->
+          <input
+           type="number"
+           name="year"
+           id="year"
+           class="form__input form__input--year"
+           placeholder="YYYY"
+           min="2021"
+           max="2022"
+          />
+         </div>
+         <!-- Time -->
+         <div class="form__field form__field--time">
+          <div class="form__label--wrap">
+           <label for="time">Pick a time</label>
+           <small class="form__error--message">Error</small>
+          </div>
+
+          <input
+           type="number"
+           name="hour"
+           id="hour"
+           class="form__input"
+           placeholder="09"
+           min="09"
+           max="21"
+          />
+          <input
+           type="number"
+           name="minutes"
+           id="minutes"
+           class="form__input form__input--minutes"
+           placeholder="00"
+           min="00"
+           max="45"
+           step="15"
+          />
+
+          <!-- Select -->
+
+          <div class="form__select">
+           <button class="form__select--btn" id="select__btn">
+            <span class="form__select--label" id="select-label"
+             ><label class="form__select--label" for="select">AM</label></span
+            >
+            <span class="form__select--arrow">
+             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11">
+              <path
+               fill="none"
+               stroke="#9E7F66"
+               stroke-width="2"
+               d="M1 1l8 8 8-8"
+              />
+             </svg>
+            </span>
+           </button>
+           <div class="form__select--options">
+            <label class="form__select--input-label" for="am">AM</label>
+            <input
+             type="radio"
+             name="am-pm"
+             id="am"
+             class="form__select--option-item"
+            />
+            <div class="check"></div>
+
+            <label class="form__select--input-label" for="pm">PM</label>
+            <input
+             type="radio"
+             name="am-pm"
+             id="pm"
+             class="form__select--option-item"
+            />
+            <div class="check"></div>
+           </div>
+          </div>
+         </div>
+
+         <!-- Num people -->
+         <div class="form__field form__counter">
+          <button class="form__counter--icon form__counter--icon-minus">
+           <svg xmlns="http://www.w3.org/2000/svg" width="7" height="3">
+            <path fill="#9E7F66" d="M6.425 2.977V.601H.629v2.376z" />
+           </svg>
+          </button>
+          <input
+           type="text"
+           name="counter"
+           id="counter"
+           class="form__input"
+           min="1"
+           max="20"
+           maxlength="2"
+           value="4"
+          />
+          <span class="form__counter--text">people</span>
+          <button class="form__counter--icon form__counter--icon-plus">
+           <svg xmlns="http://www.w3.org/2000/svg" width="10" height="11">
+            <path
+             fill="#9E7F66"
+             d="M6.227 10.156V6.727h3.429V4.342H6.227V.913H3.842v3.429H.413v2.385h3.429v3.429z"
+            />
+           </svg>
+          </button>
+         </div>
+         <button class="form__submit btn btn-dark" type="submit">
+          Make reservation
+         </button>
+        </form>
+       </div>
+      </fieldset>
+     </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer footer__booking">
+     <div class="footer__content">
+      <div class="footer__container">
+       <a href="index.html"
+        ><img
+         class="hero__logo footer__logo"
+         src="/main-base/images/homepage/logo.svg"
+         alt="Dine restaurant logo"
+       /></a>
+
+       <div class="footer__content--info">
+        <p class="footer__content--location">Marthwaite, Sedbergh</p>
+        <p class="footer__content--city">Cumbria</p>
+        <p class="footer__content--number">+00 44 123 4567</p>
+       </div>
+
+       <div class="footer__content--times">
+        <p class="footer__content--opening">Opening times</p>
+        <p class="footer__content--hours">Mon - Fri: 09:00 AM - 10:00 PM</p>
+        <p class="footer__content--hours">Sat - Sun: 09:00 AM - 11:30 PM</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+ </body>
+</html>

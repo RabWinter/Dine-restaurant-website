@@ -1,0 +1,248 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.slides {
+ display: grid;
+ grid-template-columns: 1fr;
+ justify-items: center;
+ text-align: center;
+ position: relative;
+ top: 1rem;
+
+ @include breakpoint-up(medium) {
+  top: 3.5rem;
+ }
+
+ @include breakpoint-up(large) {
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+  gap: 3rem;
+  padding: 0 5rem;
+ }
+
+ @include breakpoint-up(xlarge) {
+  top: -6rem;
+  gap: 7.9375rem;
+  padding: 0 7rem;
+ }
+
+ &::before {
+  @include breakpoint-up(medium) {
+   content: url('/main-base/images/patterns/pattern-curve-top-right.svg');
+   position: absolute;
+   top: -18%;
+   right: 50%;
+   z-index: -1;
+  }
+
+  @include breakpoint-up(large) {
+   content: '';
+  }
+ }
+
+ &__sub-grid {
+  @include breakpoint-up(large) {
+   display: grid;
+   grid-template-rows: repeat(3, auto);
+   text-align: left;
+   padding-left: 2rem;
+  }
+
+  @include breakpoint-up(xlarge) {
+   padding-left: 0;
+   margin-top: 3rem;
+  }
+ }
+
+ &__images {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  position: relative;
+
+  @include breakpoint-up(large) {
+   justify-content: flex-end;
+   width: 100%;
+  }
+
+  img {
+   box-shadow: 0px 34px 80px rgba(0, 0, 0, 0.616);
+  }
+
+  &::before {
+   @include breakpoint-up(medium) {
+    content: url('/main-base/images/patterns/pattern-lines.svg');
+    position: absolute;
+    top: -10.5%;
+    left: 0;
+    z-index: 1;
+   }
+
+   @include breakpoint-up(large) {
+    top: -8%;
+    left: -10%;
+   }
+  }
+ }
+
+ &__image--wrap {
+  @include breakpoint-up(medium) {
+   display: flex;
+   justify-content: center;
+  }
+
+  @include breakpoint-up(large) {
+   display: block;
+  }
+ }
+
+ &__image--select {
+  margin-top: 3.0625rem;
+  margin-bottom: 2.6875rem;
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint-up(medium) {
+   width: 100%;
+   flex-direction: row;
+   justify-content: center;
+  }
+
+  @include breakpoint-up(large) {
+   grid-column: 2;
+   grid-row: 3;
+   flex-direction: column;
+   width: 50%;
+  }
+
+  @include breakpoint-up(xlarge) {
+   width: 40%;
+  }
+ }
+
+ &__image {
+  display: none;
+ }
+
+ &__image--active {
+  display: block;
+  z-index: 0;
+
+  @include breakpoint-up(medium) {
+   width: 83.5%;
+  }
+
+  @include breakpoint-up(large) {
+   width: 100%;
+  }
+ }
+
+ &__tab {
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: grey;
+
+  &:not(:first-child) {
+   margin-top: 2.0625rem;
+
+   @include breakpoint-up(medium) {
+    margin-top: 0;
+   }
+  }
+
+  &:nth-child(2) {
+   @include breakpoint-up(medium) {
+    margin: 0 6rem;
+   }
+
+   @include breakpoint-up(large) {
+    margin: 0;
+   }
+  }
+
+  @include breakpoint-up(large) {
+   text-align: left;
+
+   &:not(:first-child) {
+    margin-top: 1.875rem;
+   }
+  }
+ }
+
+ &__tab--active {
+  color: rgb(75, 75, 75);
+  position: relative;
+  z-index: -1;
+
+  @include breakpoint-up(large) {
+   transform: translateX(5%);
+   transition: all 150ms ease-in-out;
+  }
+
+  &::after {
+   content: '';
+   position: absolute;
+   height: 1px;
+   top: 193%;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 3rem;
+   background-color: $primaryGold;
+
+   @include breakpoint-up(large) {
+    left: -40%;
+    top: 100%;
+    width: 5rem;
+   }
+
+   @include breakpoint-up(xlarge) {
+    left: -60%;
+    width: 9rem;
+   }
+  }
+ }
+
+ &__content {
+  display: none;
+ }
+
+ &__content--active {
+  display: block;
+  padding: 0 2rem;
+  margin-bottom: 2.75rem;
+
+  @include breakpoint-up(medium) {
+   height: 9rem;
+  }
+
+  @include breakpoint-up(large) {
+   grid-column: 2;
+   grid-row: 1;
+   padding: 0;
+   margin-bottom: 4.8125rem;
+  }
+ }
+
+ &__statement {
+  @include breakpoint-up(medium) {
+   margin: 0 8rem;
+   font-size: 0.6875rem;
+  }
+
+  @include breakpoint-up(large) {
+   margin: 0 0 2rem 0;
+  }
+ }
+
+ &__btn--wrap {
+  @include breakpoint-up(large) {
+   grid-row: 2;
+   grid-column: 2;
+  }
+ }
+}

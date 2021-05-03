@@ -1,0 +1,97 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.hero {
+ min-height: 46.75rem;
+ padding-top: 14.5rem;
+ padding-left: 1.5rem;
+ padding-right: 1.5rem;
+ background-color: $primaryGray;
+
+ text-align: center;
+ margin: 0 auto;
+ padding-bottom: 9.5rem;
+
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: top center;
+ background-image: url('/main-base/images/homepage/hero-bg-mobile.jpg');
+ background-image: url('/main-base/images/homepage/hero-bg-mobile@2x.jpg');
+
+ @include breakpoint-up(medium) {
+  min-height: 62rem;
+  padding-top: 23.75rem;
+  background-image: url('/main-base/images/homepage/hero-bg-tablet.jpg');
+  background-image: url('/main-base/images/homepage/hero-bg-tablet@2x.jpg');
+ }
+
+ @include breakpoint-up(large) {
+  min-height: 65.25rem;
+  padding-top: 30rem;
+ }
+
+ @include breakpoint-up(xlarge) {
+  min-height: 51.25rem;
+  padding-top: 4.0625rem;
+  padding-left: 10.4375rem;
+  margin: 0;
+  background-image: url('/main-base/images/homepage/hero-bg-desktop.jpg');
+  background-image: url('/main-base/images/homepage/hero-bg-desktop@2x.jpg');
+ }
+
+ &__content--wrap {
+  @include breakpoint-up(xlarge) {
+   text-align: left;
+
+   padding-right: 39rem;
+  }
+ }
+
+ &__logo {
+  height: 2.5rem;
+  margin-bottom: 2rem;
+
+  @include breakpoint-up(xlarge) {
+   margin-bottom: 9.5625rem;
+  }
+ }
+
+ &__logo--img {
+  height: 2.5rem;
+ }
+
+ &__heading {
+  margin-bottom: 2.5625rem;
+  padding: 0 2rem;
+
+  @include breakpoint-up(medium) {
+   padding: 0 10rem;
+  }
+
+  @include breakpoint-up(xlarge) {
+   padding: 0 0 0 0;
+  }
+ }
+
+ &__statement {
+  margin-bottom: 4.375rem;
+
+  @include breakpoint-up(medium) {
+   padding: 0 5rem;
+  }
+
+  @include breakpoint-up(large) {
+   padding: 0 12rem;
+  }
+
+  @include breakpoint-up(xlarge) {
+   padding: 0;
+  }
+ }
+
+ &__btn-book {
+  background-color: #080808;
+  color: $white;
+  border: 1px solid $white;
+ }
+}

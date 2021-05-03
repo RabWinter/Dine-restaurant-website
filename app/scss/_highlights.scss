@@ -1,0 +1,179 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.highlights {
+ display: grid;
+ grid-template-columns: 1fr;
+ justify-items: center;
+ background-color: $primaryGray;
+ position: relative;
+ top: -4rem;
+
+ @include breakpoint-up(medium) {
+  padding-bottom: 4.4375rem;
+ }
+
+ @include breakpoint-up(xlarge) {
+  top: -14rem;
+  gap: 5rem;
+  padding: 15rem 10rem 7.5rem 10rem;
+ }
+
+ &__container {
+  @include breakpoint-up(large) {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-auto-rows: auto;
+   gap: 3rem;
+
+   max-width: 93em;
+  }
+ }
+
+ &::before {
+  @include breakpoint-up(large) {
+   top: -21%;
+   left: 41%;
+  }
+
+  @include breakpoint-up(xlarge) {
+   top: -39%;
+  }
+ }
+
+ @include breakpoint-up(large) {
+  padding: 15rem 7rem 7.4375rem 7rem;
+ }
+
+ &__text {
+  @include breakpoint-up(medium) {
+   position: relative;
+
+   &::before {
+    content: url('/main-base/images/patterns/pattern-divide.svg');
+    position: absolute;
+    top: -28%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include breakpoint-up(large) {
+     top: -15%;
+     left: 9%;
+    }
+   }
+  }
+ }
+
+ &__menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
+
+ &__menu--item {
+  width: 90%;
+  text-align: center;
+  padding-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+
+  &:not(:first-child) {
+   &::before {
+    content: '';
+    position: absolute;
+    top: -21px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: $menuDivideGray;
+
+    @include breakpoint-up(medium) {
+     top: -2px;
+     left: 95px;
+     width: 75%;
+    }
+
+    @include breakpoint-up(large) {
+     left: 0;
+     width: 100%;
+    }
+   }
+  }
+
+  @include breakpoint-up(medium) {
+   padding: 1.5rem 6rem;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   text-align: left;
+  }
+
+  @include breakpoint-up(large) {
+   padding: 1.5rem 0 1.5rem 0;
+
+   &:first-child {
+    padding-top: 0;
+   }
+
+   &:last-child {
+    padding-bottom: 0;
+   }
+  }
+ }
+
+ &__image--wrap {
+  @include breakpoint-up(medium) {
+   position: relative;
+
+   &::after {
+    content: url('/main-base/images/patterns/pattern-divide.svg');
+    position: absolute;
+    top: 10%;
+    left: 73%;
+    z-index: -1;
+
+    @include breakpoint-up(large) {
+     left: 70%;
+    }
+   }
+  }
+ }
+
+ &__text--wrap {
+  line-height: 2;
+  @include breakpoint-up(medium) {
+   padding-left: 3.9375rem;
+   line-height: 1.8;
+  }
+ }
+
+ &__heading {
+  @include breakpoint-up(medium) {
+   margin-top: 8.6875rem;
+  }
+
+  @include breakpoint-up(large) {
+   margin-top: 0;
+  }
+ }
+
+ &__statement {
+  margin-bottom: 6.3125rem;
+
+  @include breakpoint-up(medium) {
+   margin-bottom: 1.5625rem;
+  }
+ }
+
+ // Slides pattern
+ &::after {
+  @include breakpoint-up(large) {
+   content: url('/main-base/images/patterns/pattern-curve-top-right.svg');
+   position: absolute;
+   top: 100%;
+   right: 65%;
+   z-index: -1;
+  }
+ }
+}

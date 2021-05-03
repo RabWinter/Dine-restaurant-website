@@ -1,0 +1,54 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.btn {
+ padding: 1.5rem 4rem;
+ font-size: 0.8rem;
+ letter-spacing: 1.5px;
+ text-transform: uppercase;
+ cursor: pointer;
+}
+
+.btn-light {
+ background-color: $primaryGray;
+ color: $white;
+ border: $borderLight;
+
+ &:hover {
+  background-color: $white;
+ }
+}
+
+.btn-dark {
+ background-color: $primaryGray;
+ border: none;
+
+ &:hover {
+  background-color: $white;
+  border: $borderDark;
+  color: $primaryGray;
+  @include hover(speed);
+ }
+}
+
+.btn-transparent {
+ background-color: transparent;
+ color: $white;
+ border: $borderLight;
+
+ &:hover {
+  background-color: $white;
+  color: $primaryGray;
+  @include hover(speed);
+ }
+}
+
+.btn-book {
+ background-color: $primaryGray;
+
+ &:hover {
+  background-color: $white;
+  color: $primaryGray;
+  @include hover(speed);
+ }
+}
